@@ -11,13 +11,14 @@ class ISS:
     
     @property
     def sat_data(self):
+        '''ISS data'''
         if requests.get(self.url).status_code in range(200,202):
             return requests.get(self.url).json()
         return -1
 
 
     def fetch_data(self, times = 1):
-        '''Prints the '''
+        '''Fetches data from the API 'times' number of times '''
         json_data=[]
         
         for _ in range(times):
@@ -34,12 +35,3 @@ class ISS:
         return f"ISS({self.url})"
 
 
-
-
-iss = ISS('https://api.wheretheiss.at/v1/satellites/25544')
-
-
-# print(iss.fetch_data(2))
-
-
-print(iss.sat_data)

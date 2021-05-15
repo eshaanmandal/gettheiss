@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime, time
-import sys,time
+import time
 
 ''' A module which helps in obtaining the data from iss and using it in your python programs'''
 
